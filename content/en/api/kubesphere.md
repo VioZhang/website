@@ -2,6 +2,6 @@
 title: KubeSphere Api Documents
 description: KubeSphere Api Documents
 keywords: KubeSphere, KubeSphere Documents, Kubernetes
-
-swaggerUrl: json/kubesphere.json
+disallow: true
+swaggerUrl: json/kubesphere-3.1.json
 ---

@@ -2,38 +2,59 @@
 <meta charset="utf-8">
 <title>{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
 <meta name="keywords" content="{{ with .Params.Keywords }}{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}{{ else }}{{ with .Site.Params.keywords }}{{ . }}{{ end }}{{ end }}">
 
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="{{ with .Params.Title }}{{ . }}{{ else }}{{ with .Site.Params.title }}{{ . }}{{ end }}{{ end }}"/>
 <meta property="og:description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"/>
-<meta property="og:image" content="{{ with .Params.snapshot }}{{ . }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
+<meta property="og:image" content="{{ with .Params.snapshot }}{{ . | absURL }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
 <meta property="og:url" content="{{ .Permalink }}"/>
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@KubeSphere" />
+<meta property="twitter:image" content="{{ with .Params.snapshot }}{{ . | absURL }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
 
 <meta name="docsearch:language" content="{{ .Site.LanguageCode }}" />
 
+<link rel="canonical" href="https://kubesphere.io{{ .RelPermalink }}" />
+
+{{- partial "favicons.html" . -}}
+
 {{- partial "css.html" . -}}
 
-<script src='{{ "js/jquery-3.5.0.min.js" | relURL }}'></script>
+<script src='{{ "js/jquery-3.7.0.min.js" | relURL }}'></script>
 <script src='{{ "js/viewer.min.js" | relURL }}'></script>
 <script src='{{ "js/jquery.modal.min.js" | relURL }}'></script>
+<script src='{{ "swiper/swiper-bundle.min.js" | relURL }}'></script>
 
 {{ if .IsDescendant (.GetPage "/docs") }}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript" src="/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+{{ end }}
+
+<!-- Baidu Analytics -->
+{{ if .Site.Params.baiduAnalyticsID }}
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?{{ .Site.Params.baiduAnalyticsID }}";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 {{ end }}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-{{ if .Site.Params.addGoogleAnalytics }}
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-181950513-1"></script>
+{{ if .Site.Params.googleAnalyticsID }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalyticsID }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
 
-  gtag('config', 'UA-181950513-1');
+  gtag('config', '{{ .Site.Params.googleAnalyticsID }}');
 </script>
 {{ end }}
 
@@ -50,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {{ end }}
 
 <!-- GrowingIO Analytics code version 2.1 -->
-<!-- Copyright 2015-2017 GrowingIO, Inc. More info available at http://www.growingio.com -->
+<!-- Copyright 2015-2017 GrowingIO, Inc. More info available at https://www.growingio.com -->
 <script type='text/javascript'>
 !function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio");
   gio('init', '8a24ae300cbf8b8c', {});
@@ -72,5 +93,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       a.appendChild(r);
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+{{ end }}
+
+
+{{ if .Site.Params.addLinkedin }}
+<script type="text/javascript"> _linkedin_partner_id = "3131724"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script>
+<script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> 
+<noscript> < img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=3131724&fmt=gif" /> </noscript>
+{{ end }}
+
+{{ if .Site.Params.addTwitter }}
+<!-- Twitter universal website tag code -->
+<script>
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Pixel ID and Standard Event data below
+  twq('init','o65xa');
+  twq('track','PageView');
+  </script>
+  <!-- End Twitter universal website tag code -->
 {{ end }}
 

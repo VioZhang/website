@@ -1,6 +1,8 @@
 ---
 title: '使用 GPU-Operator 与 KubeSphere 简化深度学习训练与监控 GPU'
 tag: 'KubeSphere,Kubernetes,GPU,深度学习'
+keywords: 'GPU, Operator, GPU-Operator, NVIDIA, k8s-device-plugin, 深度学习, Kubernetes, KubeSphere'
+description: '本文将从 GPU-Operator 概念介绍、安装部署、深度训练测试应用部署，以及在 KubeSphere 使用自定义监控面板对接 GPU 监控，从原理到实践，逐步浅析介绍与实践 GPU-Operator。'
 createTime: '2021-03-17'
 author: '朱含'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/fengmian.png'
@@ -476,7 +478,7 @@ $ kubectl apply -f custom/gpu-servicemonitor.yaml
 
 #### `KubeSphere 3.0`
 
-如果部署的 KubeSphere 版本是`KubeSphere 3.0`，需要简单地配置以下几个步骤，便可顺利完成可观察性监控。
+如果部署的 KubeSphere 版本是`KubeSphere 3.0`，需要简单地配置以下几个步骤，便可顺利完成可观测性监控。
 
 首先， 登录`kubsphere console`后，创建一个企业空间名称为`ks-monitoring-demo`, 名称可按需创建;
 

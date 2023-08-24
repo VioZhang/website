@@ -1,22 +1,19 @@
 approvers:
-    - zryfish #oncall
+    - liyun95
+    - Bettygogo2021 #oncall
+    - zheng1
     - rayzhou2017
-    - FeynmanZhou
+    - faweizhao26
+    - yangchuansheng
 
 reviewers:
+    - liyun95
+    - Bettygogo2021
+    - zheng1
     - rayzhou2017
-    - zryfish
+    - faweizhao26
+    - yangchuansheng
     - benjaminhuo
     - calvinyv
-    - FeynmanZhou
-    - huanggze
-    - huojiao2006
-    - Ma-Dan
-    - magicsong
     - pixiake
-    - runzexia
     - wansir
-    - wnxn
-    - zheng1
-    - soulseen
-    - shaowenchen

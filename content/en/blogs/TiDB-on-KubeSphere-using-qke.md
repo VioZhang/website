@@ -14,7 +14,7 @@ In a world where Kubernetes has become the de facto standard to build applicatio
 
 ![tidb-architecture](https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.png)
 
-In addition to TiDB, I am also using [KubeSphere](https://kubesphere.io/), an open-source distributed operating system that manages cloud-native applications with [Kubernetes](https://kubernetes.io/) as its kernel. It provides a plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem. [KubeSphere can be run anywhere](https://kubesphere.io/docs/introduction/what-is-kubesphere/#run-kubesphere-everywhere) as it is highly pluggable without any hacking into Kubernetes.
+In addition to TiDB, I am also using KubeSphere [Container Platform](https://kubesphere.io/), an open-source distributed operating system that manages cloud-native applications with [Kubernetes](https://kubernetes.io/) as its kernel. It provides a plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem. [KubeSphere can be run anywhere](https://kubesphere.io/docs/introduction/what-is-kubesphere/#run-kubesphere-everywhere) as it is highly pluggable without any hacking into Kubernetes.
 
 ![KubeSphere-structure-comp](https://ap3.qingstor.com/kubesphere-website/docs/KubeSphere-structure-comp.png)
 
@@ -40,7 +40,7 @@ Therefore, I select QingCloud Kubernetes Engine (QKE) to prepare the environment
 
    ![cluster-management](https://ap3.qingstor.com/kubesphere-website/docs/20201026175447.png)
 
-3. Use the built-in **Web Kubectl** from the Toolkit in the bottom right corner to execute the following command to install TiDB Operator CRD:
+3. Use the built-in **Web Kubectl** from the Toolkit in the bottom-right corner to execute the following command to install TiDB Operator CRD:
 
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/v1.1.6/manifests/crd.yaml
@@ -60,7 +60,7 @@ Therefore, I select QingCloud Kubernetes Engine (QKE) to prepare the environment
 
 5. Now, let's get back to the **Access Control** page where all the workspaces are listed. Before I proceed, first I need to create a new workspace (e.g. `dev-workspace`).
 
-   In a workspace, different users have different permissions to perform varied tasks in projects. Usually, a department-wide project requires a multi-tenant system so that everyone is responsible for their own part. For demonstration purposes, I use the account `admin` in this example. You can [see the official documentation of KubeSphere](https://kubesphere.io/docs/quick-start/create-workspace-and-project/) to know more about how the multi-tenant system works.
+   In a workspace, different users have different permissions to perform varied tasks in projects. Usually, a department-wide project requires a multi-tenant system so that everyone is responsible for their own part. For demonstration purposes, I use the user `admin` in this example. You can [see the official documentation of KubeSphere](https://kubesphere.io/docs/quick-start/create-workspace-and-project/) to know more about how the multi-tenant system works.
 
    ![create-workspace](https://ap3.qingstor.com/kubesphere-website/docs/20201026192648.png)
 
@@ -231,7 +231,7 @@ These services just created can be accessed easily as KubeSphere tells you how a
 
 I hope you guys all have successfully deployed TiDB. Both TiDB and KubeSphere are powerful tools for cloud-native applications, so in fact, I cannot showcase every aspect of them all in this post. For example, the app deployment function has much to offer for cloud-native enthusiasts like me. I will post another article on how to deploy TiDB by uploading Helm charts to the KubeSphere App Store.
 
-If you have any questions, don't hesitate to contact us in [Slack](https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE) or [GitHub](https://github.com/kubesphere).
+If you have any questions, don't hesitate to contact us in [Slack](https://join.slack.com/t/kubesphere/shared_invite/zt-1ilxbsp39-t4ES4xn5OI0eF5hvOoAhEw) or [GitHub](https://github.com/kubesphere).
 
 ## References
 

@@ -1,5 +1,5 @@
 ---
-title: "可观察性"
+title: "可观测性"
 layout: "scenario"
 
 css: "scss/scenario.scss"
@@ -8,11 +8,12 @@ section1:
   title: KubeSphere 助您轻松实现可视化
   content: KubeSphere 提供了丰富的可视化功能，支持从基础设施到应用的多维度指标监控。此外，KubeSphere 还集成了许多常用的工具，包括多租户日志查询和收集、告警和通知等功能。
   image: /images/observability/banner.jpg
+  showDownload: true
 
 image: /images/observability/observability.jpg
 
 section2:
-  title: 可发现性、可观察性、安全性：一站式集成您所需的所有特性
+  title: 可发现性、可观测性、安全性：一站式集成您所需的所有特性
   list:
     - title: 多维度监控
       image: /images/observability/multi-dimensional-monitoring.png
@@ -41,11 +42,9 @@ section2:
         - content: <span>集成 AlertManager</span> 支持多种通知渠道（v3.0.0）
 
 section3:
-  title: 观看 KubeSphere 云原生可观察性演示
+  title: 观看 KubeSphere 云原生可观测性演示
   videoLink: https://www.youtube.com/embed/uf0TTowc56I
-  content: 想自己动手体验实际操作？
-  btnContent: 开始动手实验
-  link: https://kubesphere.com.cn/docs/pluggable-components/
+  showDownload: true
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

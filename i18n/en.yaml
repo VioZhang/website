@@ -1,7 +1,7 @@
 - id: Technology Blogs
   translation: Technology Blogs
-- id: KubeSphere®️ 2020 All Rights Reserved.
-  translation: KubeSphere®️ 2020 All Rights Reserved.
+- id: KubeSphere®️ 2022 All Rights Reserved.
+  translation: KubeSphere®️ 2022 All Rights Reserved.
 - id: Published on
   translation: Published on
 - id: KubeCon & QCon
@@ -26,6 +26,8 @@
   translation: email is required!
 - id: Please enter a valid email address.
   translation: Please enter a valid email address!
+- id: Email address already exists.
+  translation: Email address already exists!
 - id: news
   translation: news
 - id: Table of Contents
@@ -33,11 +35,13 @@
 - id: Demo
   translation: Demo
 - id: demo content 1
-  translation: "1.Experience account: demo1 / Demo123"
+  translation: "1.Create a KubeSphere Cloud account and log in to the platform."
 - id: demo content 2
-  translation: 2.This account is only allowed to view parts of UI
+  translation: 2.In the upper-right corner, click Console, and then click Lite Cluster on the left.
 - id: demo content 3
-  translation: 3.It's recommended that install KubeSphere in your environment
+  translation: 3.Create a K8s cluster with KubeSphere installed.
+- id: demo content 4
+  translation: 4.Access KubeSphere with the default account and password (admin/P@88w0rd).
 - id: Coming Soon
   translation: Coming Soon
 - id: Read More
@@ -118,3 +122,21 @@
   translation: Join Slack
 - id: Join Wechat
   translation: Scan the QR code
+- id: Cookie Statement
+  translation: Your privacy is important to us. We use cookies to remember subscription details, optimize site functionality, and deliver content tailored to your interests. To find out more, see our <a href="{{.}}">privacy policy</a>.
+- id: Accept and continue
+  translation: Accept and continue
+- id: Install on Kubernetes
+  translation: Install on Kubernetes
+- id: Install on Linux
+  translation: Install on Linux
+- id: Was this page Helpful?
+  translation: Was this page Helpful?
+- id: 'Yes'
+  translation: 'Yes'
+- id: 'No'
+  translation: 'No'
+- id: Msg-Thank
+  translation: Thanks for the feedback. If you have a specific question about how to use KubeSphere, ask it on Slack. Open an issue in the GitHub repo if you want to report a problem or suggest an improvement.
+- id: Visitor-count
+  translation: 'The number of views: '

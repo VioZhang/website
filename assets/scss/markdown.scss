@@ -279,6 +279,10 @@
   background-color: #f6f8fa;
 }
 
+.md-body table thead tr th:last-of-type{
+  min-width: 40px;
+}
+
 .md-body table img {
   background-color: transparent;
 }
@@ -425,7 +429,7 @@
 .md-body pre code {
   display: inline-block;
   white-space: pre;
-  font-family: Monaco;
+  font-family: Monaco,Menlo,Consolas,Courier New,monospace;
   font-size: 14px;
   line-height: 1.71;
   color: #ffffff;

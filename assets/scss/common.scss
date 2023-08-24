@@ -4,7 +4,8 @@
 @import 'footer';
 
 body {
-  font-family: $font-family-2;
+  font-family: $font-family-1;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 ,h4, h5, h6 {
@@ -46,6 +47,18 @@ section {
   display: flex;
   flex-wrap: wrap ;
   justify-content: space-between;
+}
+
+.nowrap-li:last-of-type {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: $mobile-max-width) {
+  .nowrap-li:last-of-type {
+    a {
+      white-space: normal;
+    }
+  }
 }
 
 .title-h1 {
@@ -388,11 +401,20 @@ section {
   z-index: 2;
   width: 20px;
   height: 20px;
-  background-image: url('/images/docs/copy.png');
+  background-image: url('/images/docs/v3.3/copy.png');
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  &.is-active {
+    background-image: none;
+    width: auto;
+    &:before {
+      content: "Copied";
+      color: #ffffff;
+    }
+  }
 }
+
 
 .copy-code-button:hover {
   top: 3px;
@@ -401,4 +423,28 @@ section {
 .highlight pre {
   /* Avoid pushing up the copy buttons. */
   margin: 0;
+}
+
+.download-btn {
+  height: 56px;
+  border-radius: 28px;
+  font-size: 16px;
+}
+
+.download-btn1 {
+  width: 211px;
+  box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(76, 169, 134, 0.05);
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.1) 97%),linear-gradient(to bottom,#242e42,#242e42);
+}
+
+.download-btn2 {
+  width: 195px;
+  margin-left: 12px;
+  color: #36435c;
+  box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2), 0 10px 50px 0 rgba(76, 169, 134, 0.05);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1) 97%), linear-gradient(to bottom, #ffffff, #ffffff);
+  @media only screen and (max-width: $mobile-max-width) {
+    margin-left: 0px;
+    margin-top: 12px;
+  }
 }

@@ -6,24 +6,14 @@
                 <div class="left-div">
                     <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="foot-logo">
                     <p>{{ i18n "Receive the latest news, articles and updates from KubeSphere" }}</p>
-                    <div>
-                        <form
-                            action="{{ .Site.Params.mailchimpSubscribeUrl }}"
-                            method="post"
-                            target="_blank"
-                            novalidate
-                        >
-                            <input name="EMAIL" id="email-input" type="text" placeholder='{{ i18n "Please enter your email address" }}'>
-                            <button type="submit" id="email-submit">{{ i18n "Subscribe" }}</button>
-                        </form>
-                    </div>
+                    {{ partial "subscribe.html" .}}
                     <span id="message" data-message1='{{ i18n "email is required" }}' data-message2='{{ i18n "Please enter a valid email address." }}'></span>
                 </div>
                 <div class="right-div">
                     <ul class="common-flex-layout">
                         {{ with $data.footer.footer }}
                         {{ range .list }}
-                            <li>
+                            <li class="nowrap-li">
                                 <div class="h3">{{ .title }}</div>
                                 {{ range .list }}
                                 {{ if hasPrefix .link "http" }}
@@ -40,15 +30,15 @@
             </div>
             <div class="down-main">
                 <div class='img-div'>
-                    <a class='wechat' href="javascript:void(0);">
+                    <a class='wechat' href="javascript:void(0);" aria-label="wechat">
                         {{ "/static/images/footer/wechat.svg" | readFile | safeHTML }}
                         <div class="hide-div">
                             <img src="/images/home/wechat.svg" alt="">
                         </div>
                     </a>
-                    <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank"></a>
-                    <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" rel="noopener noreferrer"></a>
-                    <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank" aria-label="facebook"></a>
+                    <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" aria-label="twitter" rel="noopener noreferrer"></a>
+                    <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" aria-label="linkedin" rel="noopener noreferrer"></a>
                     <!-- <a class='wechat' href="javascript:void(0);">
                         {{ "/static/images/footer/group.svg" | readFile | safeHTML }}
                         <div class="hide-div">
@@ -58,16 +48,16 @@
                         </div>
                     </a> -->
                     {{ if .Site.Params.bilibiliLink }}
-                    <a class='bilibili-a' href="{{ .Site.Params.bilibiliLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='bilibili-a' href="{{ .Site.Params.bilibiliLink }}" target="_blank" aria-label="bilibili" rel="noopener noreferrer"></a>
                     {{ end }}
                     {{ if .Site.Params.youtubeLink }}
-                    <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" aria-label="youtube" rel="noopener noreferrer"></a>
                     {{ end }}
-                    <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" rel="noopener noreferrer"></a>
-                    <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" rel="noopener noreferrer"></a>
-                    <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" rel="noopener noreferrer"></a>
+                    <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" aria-label="slack" rel="noopener noreferrer"></a>
+                    <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" aria-label="github" rel="noopener noreferrer"></a>
+                    <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" aria-label="medium" rel="noopener noreferrer"></a>
                 </div>
-                <p class='p1'>{{ i18n "KubeSphere®️ 2020 All Rights Reserved." }}</p>
+                <p class='p1'>{{ i18n "KubeSphere®️ 2023 All Rights Reserved." }}</p>
                 {{ if .Site.Params.showCaseNumber }}
                 <p class="case">
                     <a
@@ -91,41 +81,20 @@
         </div>
     </div>
 
+    <div class="cookie">
+        <div class="common-layout">
+            <p>
+                {{ i18n "Cookie Statement" ("/privacy" | relLangURL) | safeHTML }}
+              </p>
+              <button>
+                {{ i18n "Accept and continue" }}
+              </button>
+        </div>
+    </div>
+
 </footer>
 
 <script>
-    var bindSubmit = function() {
-        var input = $('#email-input')
-        $('#email-submit').click(function(event) {
-            event.stopPropagation()
-            var email = input.val()
-            var message1 = $('#message').data('message1')
-            var message2 = $('#message').data('message2')
-            if (!email) {
-                event.preventDefault()
-                showMessage(message1)
-            } else if (!validateEmail(email)) {
-                event.preventDefault()
-                showMessage(message2)
-            }
-        })
-    }
-
-    var bindHideMessage = function() {
-        $(window).click(function() {
-            $('#message').hide()
-        })
-    }
-
-    var showMessage = function(message) {
-        $('#message').html(message).show()
-    }
-
-    var validateEmail = function(email) {
-        var reg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
-        return reg.test(email)
-    }
-
     var lazyLoad = function(allImg, imgNum) {
         for (var i = 0; i < imgNum; i++) {
             var img = allImg.eq(i)
@@ -157,8 +126,32 @@
         }
     }
 
+    var docCookies = {
+        getItem: function (sKey) {
+            return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+        },
+        setItem: function (sKey, sValue) {
+            if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+            document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue)
+            return true;
+        },
+    };
+
+    var bindHideCookie = function() {
+        var hasAuth = docCookies.getItem("hasAuth")
+        var cookieElement = $('.cookie')
+        if (hasAuth) {
+            cookieElement.hide()
+        } else {
+            cookieElement.show()
+        }
+        cookieElement.find('button').on('click', function() {
+            docCookies.setItem("hasAuth", '1')
+            cookieElement.hide()
+        })
+    }
+
     bindAddPadding()
     // bindLayLoad()
-    bindSubmit()
-    bindHideMessage()
+    bindHideCookie()
 </script>

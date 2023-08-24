@@ -4,6 +4,8 @@ createTime: '2020-08-31'
 keywords: "Kubernetes, KubeSphere, GA"
 description: "That's a Killer! KubeSphere 3.0.0 is Now Generally Available!"
 author: 'Feynman, Sherlock'
+image: https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png
+tag: "Product News"
 ---
 
 August 31, 2020 - KubeSphere open source community today announces the General Availability of KubeSphere 3.0.0!
@@ -16,7 +18,7 @@ Most importantly, all of these cannot be achieved without **the strong support o
 
 ## Major Updates in 3.0.0
 
-KubeSphere 3.0.0 features federated deployment across clouds and unified management of multiple clusters, enabling enterprises to deploy their apps with one click onto different public clouds and private infrastructure. It represents a container platform with the most powerful and feature-rich observability the industry has ever witnessed. It provides multi-dimensional metrics across clusters and applications for monitoring, logging, alerting and notification, auditing and events. It adds support for log query across different dimensions and tenants, as well as third-party apps for custom monitoring. As a result, developers and cluster administrators can get a clear view of how their apps and clusters are running and functioning. Storage and network capacity has been brought to another level in KubeSphere 3.0.0, which adds support for network isolation among tenants, firewall policy management, and network policy management of native Kubernetes. Snapshots, capacity management, and volume monitoring features are also supported.
+KubeSphere 3.0.0 features federated deployment across clouds and unified management of multiple clusters, enabling enterprises to deploy their apps with one click onto different public clouds and private infrastructure. It represents a [container platform](https://kubesphere.io/) with the most powerful and feature-rich observability the industry has ever witnessed. It provides multi-dimensional metrics across clusters and applications for monitoring, logging, alerting and notification, auditing and events. It adds support for log query across different dimensions and tenants, as well as third-party apps for custom monitoring. As a result, developers and cluster administrators can get a clear view of how their apps and clusters are running and functioning. Storage and network capacity has been brought to another level in KubeSphere 3.0.0, which adds support for network isolation among tenants, firewall policy management, and network policy management of native Kubernetes. Snapshots, capacity management, and volume monitoring features are also supported.
 
 ## Multi-cloud and Multi-cluster Management
 

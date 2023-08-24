@@ -22,9 +22,9 @@ Strictly speaking, what’s actually happening is that dockershim is being remov
 
 Dockershim was a temporary solution proposed by the Kubernetes community to add support for Docker so that it could serve as its container runtime. Dockershim deprecation only means the code maintenance of Dockershim in the code repository of Kubernetes will stop. This is because Dockershim has become a heavy burden on the Kubernetes maintainers. After this change, the Kubernetes community will be able to maintain the Kubernetes Container Runtime Interface (CRI) only. In fact, all CRI-compliant runtimes can be the runtime for Kubernetes, such as CRI-O and containerd.
 
-Currently, the KubeSphere container platform is using Docker as the container runtime of Kubernetes. Meanwhile, it also supports any CRI-compliant implementations. For KubeSphere and Docker users, dockershim deprecation does not affect the existing KubeSphere system and will not take any toll on your cluster or on your business. KubeSphere users can continue to use Docker which has already been tested at scale.
+Currently, the KubeSphere [Container Platform](https://kubesphere.io/) is using Docker as the container runtime of Kubernetes. Meanwhile, it also supports any CRI-compliant implementations. For KubeSphere and Docker users, dockershim deprecation does not affect the existing KubeSphere system and will not take any toll on your cluster or on your business. KubeSphere users can continue to use Docker which has already been tested at scale.
 
-In future releases, other KubeSphere components, such as DevOps, will support these container runtimes and you will be able to use these CRI implementations.
+In future releases, other KubeSphere components, such as [DevOps](https://kubesphere.io/devops/), will support these container runtimes and you will be able to use these CRI implementations.
 
 ### The next game changer: containerd, CRI-O, and iSula
 
@@ -93,6 +93,8 @@ As KubeSphere supports any implementation of the Kubernetes CRI, you can easily 
    ```bash
    systemctl enable containerd && systemctl restart containerd
    ```
+   
+> If `containerd config dump |grep sandbox_image` still shows `k8s.gcr.io/pause:xxx`, please add `version = 2` to the beginning of `/etc/containerd/config.toml` and run `systemctl restart containerd`.
 
 4. Install crictl.
 
@@ -236,7 +238,7 @@ We can use the open-source tool [KubeKey](https://github.com/kubesphere/kubekey)
 3. Create a configuration file. For example, run the following command to create the configuration for KubeSphere v3.0.0.
 
    ```bash
-   ./kk create config --with-kubesphere v3.0.0
+   ./kk create config --with-kubesphere v3.2.1
    ```
 
 4. Edit the configuration file (default file name: `config-sample.yaml`). 

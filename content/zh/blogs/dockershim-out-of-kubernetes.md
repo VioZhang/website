@@ -91,6 +91,8 @@ EOF
 $ systemctl enable containerd && systemctl restart containerd
 ```
 
+> 如果`containerd config dump |grep sandbox_image`仍是显示`k8s.gcr.io/pause:xxx`，请将`version = 2`添加到`/etc/containerd/config.toml`开头并执行`systemctl restart containerd`。
+
 4. 安装 crictl。
 
 ```shell
@@ -232,7 +234,7 @@ kind: Cluster
 4. 一键部署集群。
 
 ```shell
-./kk create cluster -f config-sample.yaml  --with-kubesphere v3.0.0
+./kk create cluster -f config-sample.yaml  --with-kubesphere v3.2.1
 ```
 
 ## 查看部署结果

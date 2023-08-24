@@ -1,10 +1,10 @@
 ---
-linkTitle: 第四堂“云原生”课
+linkTitle: Kubernetes 组件交互逻辑
 weight: 4
 
 _build:
-    render: false
+  render: false
 
-profit: 了解容器技术的概念、本质、发展趋势等 本质、发展趋势等     发展趋势等 本质、发展趋势等     
-time: 2020-10-13 20:00-20:40
+profit: 通过动画理解 Kubernetes 组件交互逻辑
+time: 2021-12-17 20:00-20:40
 ---

@@ -1,6 +1,6 @@
 ---
-title: KubeSphere | 面向云原生应用的容器混合云
-description: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
+title: 面向云原生应用的容器混合云，支持 Kubernetes 多集群管理的 PaaS 容器云平台解决方案 | KubeSphere
+description: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，完全开源，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
 
 
 css: scss/index.scss
@@ -9,13 +9,9 @@ section1:
   title: KubeSphere 容器平台
   topic: 面向云原生应用的<br>容器混合云
   content: KubeSphere 愿景是打造一个以 Kubernetes 为内核的云原生分布式操作系统，它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理。
-  btnContent1: 在 Kubernetes 安装
-  downloadLink1: "https://kubesphere.com.cn/docs/quick-start/minimal-kubesphere-on-k8s/"
-  btnContent2: 在 Linux 安装
-  downloadLink2: "https://kubesphere.com.cn/docs/quick-start/all-in-one-on-linux/"
 
 section2:
-  title: 全栈的平台级解决方案
+  title: 全栈的 Kubernetes 容器云 PaaS 解决方案
   content: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
   children:
     - name: 完全开源
@@ -28,7 +24,7 @@ section2:
 
     - name: 功能丰富
       icon: /images/home/feature-rich.svg
-      content: 在一个平台统一纳管 DevOps、云原生可观察性、服务网格、应用生命周期、多租户、多集群、存储与网络
+      content: 在一个平台统一纳管 DevOps、云原生可观测性、服务网格、应用生命周期、多租户、多集群、存储与网络
 
     - name: 模块化 & 可插拔
       icon: /images/home/modular-pluggable.svg
@@ -38,7 +34,7 @@ section2:
 
 section3:
   title: 不同团队的受益
-  content: 平台内置的多租户设计，让不同的团队能够在一个平台中不同的企业空间下，更安全地从云端到边缘部署云原生应用。开发者通过界面点击即可快速部署项目，平台内置丰富的云原生可观察性与 DevOps 工具集帮助运维人员定位问题和快速交付。KubeSphere 还能帮助基础设施团队在数据中心与多个云上高效地部署与运维多集群，避免单一云厂商绑定。
+  content: 平台内置的多租户设计，让不同的团队能够在一个平台中不同的企业空间下，更安全地从云端到边缘部署云原生应用。开发者通过界面点击即可快速部署项目，平台内置丰富的云原生可观测性与 DevOps 工具集帮助运维人员定位问题和快速交付。KubeSphere 还能帮助基础设施团队在数据中心与多个云上高效地部署与运维多集群，避免单一云厂商绑定。
   children:
     - name: 基础设施团队
       content: 实现从云端到数据中心自动化部署、扩容与升级集群
@@ -62,7 +58,7 @@ section3:
       content: 构建一站式企业级的 DevOps 架构与可视化运维能力
       icon: /images/home/71.svg
       children:
-        - content: 提供从平台到应用维度的日志、监控、事件、审计、告警与通知，实现集中式与多租户隔离的可观察性
+        - content: 提供从平台到应用维度的日志、监控、事件、审计、告警与通知，实现集中式与多租户隔离的可观测性
         - content: 简化应用的持续集成、测试、审核、发布、升级与弹性扩缩容
         - content: 为云原生应用提供基于微服务的灰度发布、流量管理、网络拓扑与追踪
         - content: 提供易用的界面命令终端与图形化操作面板，满足不同使用习惯的运维人员
@@ -92,12 +88,16 @@ section4:
       icon: /images/home/multi-tenant-management.svg
       content: 提供统一的认证鉴权与细粒度的基于角色的授权系统，支持对接 AD/LDAP
 
+    - name: 支持多种存储与网络方案
+      icon: /images/home/multi-tenant-management.svg
+      content: 支持 GlusterFS、Ceph、NFS、LocalPV，提供多个 CSI 插件对接公有云与企业级存储；提供面向物理机 Kubernetes 环境的负载均衡器 <a class='inner-a' target='_blank' href='https://openelb.github.io/'>OpenELB</a>，支持网络策略可视化，支持 Calico、Flannel、Cilium、Kube-OVN 等网络插件
+
   features:
-    - name: 应用商店
-      icon: /images/home/store.svg
-      content: 提供基于 Helm 的应用商店与应用仓库，内置多个应用模板，支持应用生命周期管理
-      link: "/docs/pluggable-components/app-store/"
-      color: grape
+    - name: Kubernetes DevOps 系统
+      icon: /images/home/dev-ops.svg
+      content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
+      link: "devops/"
+      color: orange
 
     - name: 基于 Istio 的微服务治理
       icon: /images/home/service.svg
@@ -105,35 +105,35 @@ section4:
       link: "service-mesh/"
       color: red
 
-    - name: 丰富的可观察性
+    - name: 丰富的云原生可观测性
       icon: /images/home/rich.svg
       content: 提供多维度与多租户的监控、日志、事件、审计搜索，支持多种告警策略与通知渠道，支持日志转发
       link: "observability/"
       color: green
 
-    - name: DevOps 系统
-      icon: /images/home/dev-ops.svg
-      content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
-      link: "devops/"
-      color: orange
-
-    - name: 支持多种存储方案
-      icon: /images/home/multiple.svg
-      content: 支持 GlusterFS、Ceph RBD、NFS、LocalPV，提供多个 CSI 插件对接使用云上的企业级存储产品
-      link: "/docs/introduction/features/#多种存储解决方案"
+    - name: 云原生应用商店
+      icon: /images/home/store.svg
+      content: 提供基于 Helm 的应用商店与应用仓库，内置多个应用模板，支持应用生命周期管理
+      link: "/docs/v3.3/pluggable-components/app-store/"
       color: grape
 
-    - name: 网络管理
+    - name: Kubernetes 多集群管理
+      icon: /images/home/management.svg
+      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
+      link: "/docs/v3.3/multicluster-management/introduction/overview/"
+      color: orange
+
+    - name: Kubernetes 边缘节点管理
       icon: /images/home/network.svg
-      content: 提供面向物理机 Kubernetes 环境的负载均衡器 <a class='inner-a' target='_blank' href='https://porterlb.io'>Porter</a>，支持网络策略的可视化管理，支持 Calico 与 Flannel CNI
-      link: "/docs/introduction/features/#多种网络解决方案"
+      content: 基于 KubeEdge 实现应用与工作负载在云端与边缘节点的统一分发与管理，解决在海量边、端设备上完成应用交付、运维、管控的需求
+      link: "/docs/v3.3/pluggable-components/kubeedge/"
       color: green
 
-    - name: 多集群管理
-      icon: /images/home/management.svg
-      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观察性
-      link: "/docs/multicluster-management/introduction/overview/"
-      color: orange
+    - name: 多维度计量与计费
+      icon: /images/home/multiple.svg
+      content: 提供基于集群与租户的多维度资源计量与计费的监控报表，让 Kubernetes 运营成本更透明
+      link: "/docs/v3.3/toolbox/metering-and-billing/view-resource-consumption/"
+      color: grape
 
 section5:
   title: 面向云原生的架构，前后端分离
@@ -173,7 +173,7 @@ section6:
     - icon: /images/home/section6-inaccel.jpg
     - icon: /images/home/section6-maxnerva.jpg
     - icon: /images/home/section6-picc.jpg
-    - icon: /images/home/section6-powersmart.jpg
+    - icon: /images/case/logo-xdf.png
     - icon: /images/home/section6-sina.jpg
     - icon: /images/home/section6-sichuan-airlines.jpg
     - icon: /images/home/section6-sinopharm.jpg
@@ -187,10 +187,10 @@ section6:
 
   btnContent: 案例学习
   btnLink: case/
-  link: mailto:kubesphere@gmail.com
-  linkContent: 希望加入用户社区并在 KubeSphere 官网展示您的 Logo？请邮件至 kubesphere@gmail.com
+  link: mailto:info@kubesphere.io
+  linkContent: 希望加入用户社区并在 KubeSphere 官网展示您的 Logo？请邮件至 info@kubesphere.io
   joinTitle: 加入 KubeSphere 社区合作伙伴计划
   joinContent: 我们非常期待您加入 KubeSphere 社区合作伙伴计划，共同完善各自的生态，加速您的业务增长。
   joinLink: partner/
-  image: /images/home/certification.jpg
+  image: /images/home/certification.png
 ---

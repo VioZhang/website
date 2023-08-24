@@ -1,10 +1,10 @@
 ---
-linkTitle: 应用调度
-weight: 4
+linkTitle: Kubernetes 核心实战-Deployment 版本回退
+weight: 27
 
 _build:
-    render: false
+  render: false
 
-profit: 了解 KubeSphere 上应用调度方法    
-time: 2020-10-13 20:00-20:40
+profit: 了解 Deployment 的版本回退功能
+time: 2021-12-17 20:00-20:40
 ---

@@ -22,7 +22,7 @@
             </ul>
         </div>
     </div>
-    
+
 </section>
 {{ end }}
 
@@ -43,16 +43,21 @@
     <div class="common-layout">
         <h2>{{ .title }}</h2>
         <p>{{ .description }}</p>
-        <ul>
-            {{ range .list }}
-            <li>
-                <img src="{{ .image }}" alt="icon">
-                <div class="name">{{ .name }}</div>
-                <div class="profession">{{ .profession }}</div>
-                <p>{{ .description }}</p>
-            </li>
-            {{ end }}
-        </ul>
+        <div id="swiper" class="cards">
+            <div class="swiper-wrapper ul">
+                {{ range .list }}
+                    <div class="swiper-slide">
+                        <div class="li">
+                            <img src="{{ .image }}" alt="icon">
+                            <div class="name">{{ .name }}</div>
+                            <div class="profession">{{ .profession }}</div>
+                            <p>{{ .description }}</p>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+            <div id="pagination"></div>
+        </div>
     </div>
     {{ end }}
 </section>
@@ -77,8 +82,8 @@
     <div class="common-layout">
         <h2>{{ .Params.section6.title }}</h2>
         <ul class="level">
-            {{ range .Page.Sections }}
-            <li>
+            {{ range sort .Page.Sections "Weight" }}
+            <li class="tableLi">
                 <p class="title">{{ .LinkTitle }}</p>
                 <table>
                     <thead>
@@ -90,7 +95,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{ range .Page.Sections }}
+                        {{ range sort .Page.Sections "Weight" }}
                         <tr>
                             <td>{{ .LinkTitle }}</td>
                             <td>{{ .Params.profit }}</td>
@@ -106,10 +111,20 @@
                             </td>
                         </tr>
                         {{ end }}
+                        <button class="button">
+                            <span id="open">展开更多&nbsp;</span>
+                            <span id="close">收起课程&nbsp;</span>
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1.28373 0.333313L0.333374 1.28367L5.00004 5.95034L9.66671 1.28367L8.71635 0.333313L5.00004 4.04962L1.28373 0.333313Z"
+                                    fill="#0F8049" />
+                            </svg>
+                        </button>
                     </tbody>
                 </table>
             </li>
-            {{ end }} 
+            {{ end }}
         </ul>
     </div>
 </section>
@@ -129,7 +144,7 @@
                     <a href="{{ .link }}">{{ i18n "Apply for the job" }}</a>
                 </div>
             </li>
-            {{ end }} 
+            {{ end }}
         </ul>
         <div class="more">
             <a href="{{ .link }}">{{ i18n "View more jobs" }}</a>
@@ -195,7 +210,6 @@ var topActive = function() {
     var topHeight = $('.section-2').outerHeight()
     top.find('a').each(function() {
       var id = $(this).attr('href')
-      console.log(id)
       var h = $(id)
       var elementToTop = getElementTopToScreenTop(h)
       if (elementToTop < headerHeight + topHeight + 10) {
@@ -211,8 +225,82 @@ var bindScrollEvent = function() {
     topActive()
   })
 }
-bindScrollEvent()
-initScrollByHash()
-bindClickTopLink()
+
+var tableInit = function () {
+    const tableLi = $('.tableLi')
+    tableLi.each((index,item)=>{
+        const eachLi = $(item)
+        const allTrLine = eachLi.find('table tbody')
+        dealWithTableBody(eachLi[0], allTrLine)
+    })
+}
+var dealWithTableBody = function (line, tbody) {
+    const positionLine = $(line)
+    const originBody = $(tbody).clone()
+    const button = positionLine.find('button')
+    if (tbody.children().length < 6) {
+        button.addClass('hideButton')
+    } else {
+        const allTR = tbody.children().slice(0, 5)
+        tbody.empty().append(allTR)
+    }
+    button.on('click', function () {
+        button.toggleClass('active')
+        if (tbody.children().length > 5) {
+            const allTR = tbody.children().slice(0, 5)
+            tbody.empty().append(allTR)
+        } else {
+            tbody.empty().append(originBody.clone().children())
+        }
+    })
+}
+bindScrollEvent();
+initScrollByHash();
+bindClickTopLink();
+tableInit();
+
+function debounce(fn, wait) {
+    let callback = fn;    
+    let timerId = null;
+
+    function debounced() {
+        let context = this;
+        let args = arguments;        
+
+        clearTimeout(timerId);        
+        timerId = setTimeout(function() {            
+            callback.apply(context, args);
+        }, wait);
+    }
+
+    return debounced;         
+}
+
+var swiperPlay = function(){
+    var slideNum = window.innerWidth <= 768 ? 1: 3;
+    var swiper = new Swiper('#swiper', {
+        autoplay: {
+          running: true,
+          delay: 6000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
+        slidesPerView: slideNum,
+        slidesPerGroup: slideNum,
+        spaceBetween: 10,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: '#pagination',
+          bulletClass:'m-bullet',
+          bulletActiveClass:'m-bullet-active',
+          clickable :true,
+      },
+    });
+};
+
+swiperPlay();
+
+window.addEventListener('resize', debounce(swiperPlay, 500));
 </script>
 {{ end }}

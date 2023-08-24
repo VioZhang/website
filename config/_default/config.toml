@@ -1,12 +1,17 @@
-baseURL = "https://kubesphere-v3.netlify.app"
+baseURL = "https://www.kubesphere.io/"
+
+enableRobotsTXT = true
 
 [markup]
+  [markup.goldmark.extensions]
+    typographer = false
   [markup.tableOfContents]
     endLevel = 3
     ordered = false
     startLevel = 2
   [markup.goldmark.renderer]
     unsafe= true
+
 
 [Taxonomies]
 
@@ -19,16 +24,21 @@ githubBlobUrl = "https://github.com/kubesphere/website/blob/master/content"
 
 githubEditUrl = "https://github.com/kubesphere/website/edit/master/content"
 
-mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
-
 gcs_engine_id = "018068616810858123755%3Apb1pt8sx6ve"
 
 githubLink = "https://github.com/kubesphere/kubesphere"
-slackLink = "https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"
+githubApiLink = "https://api.github.com/repos/kubesphere/kubesphere"
+githubStarLink = "https://github.com/kubesphere/kubesphere/stargazers"
+slackLink = "https://join.slack.com/t/kubesphere/shared_invite/zt-1ilxbsp39-t4ES4xn5OI0eF5hvOoAhEw"
 facebookLink = "https://www.facebook.com/kubesphere"
 twitterLink = "https://twitter.com/KubeSphere"
 mediumLink = "https://itnext.io/@kubesphere"
 linkedinLink = "https://www.linkedin.com/company/kubesphere/"
+DemoLinkEn = "https://kubesphere.cloud/en/console/managed-cluster/"
+DemoLinkZh = "https://kubesphere.cloud/console/managed-cluster/"
+
+baiduAnalyticsID = "0888981f1fa45d241b1fb6962da2963e"
+googleAnalyticsID = "G-YYCVN36HT5"
 
 [languages.en]
 contentDir = "content/en"
@@ -41,6 +51,12 @@ title = "KubeSphere | The Kubernetes platform tailored for hybrid multicloud"
 description = "KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem."
 keywords = "KubeSphere, Kubernetes, container platform, DevOps, hybrid cloud, cloud native"
 snapshot = "/images/common/snapshot-en.png"
+useSendcloud = false
+mailchimpSubscribeUrl = "https://kubesphere.us10.list-manage.com/subscribe/post?u=c85ea2b944b08b951f607bdd4&id=83f673a2d9"
+hotjarTracking = true
+youtubeLink = "https://www.youtube.com/c/KubeSphere"
+addLinkedin = true
+addTwitter = true
 
 [[languages.en.menu.main]]
 weight = 2
@@ -98,30 +114,47 @@ hasChildren = true
 weight = 4
 name = "Documentation"
 hasChildren = true
-
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v3.0.0 <img src='/images/header/star.svg' alt='star'>"
-    URL = "docs/"
+    name = "v3.3 <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs/v3.3"
     weight = 1
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v2.1.x"
-    URL = "https://v2-1.docs.kubesphere.io/docs"
+    name = "v3.2"
+    URL = "https://v3-2.docs.kubesphere.io/docs"
     weight = 2
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v2.0.x"
-    URL = "https://v2-0.docs.kubesphere.io/docs/"
+    name = "v3.1"
+    URL = "https://v3-1.docs.kubesphere.io/docs"
     weight = 3
 
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v1.0.0"
-    URL = "https://v1-0.docs.kubesphere.io/docs/"
+    name = "v3.0"
+    URL = "https://v3-0.docs.kubesphere.io/docs"
     weight = 4
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v2.1"
+    URL = "https://v2-1.docs.kubesphere.io/docs"
+    weight = 5
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v2.0"
+    URL = "https://v2-0.docs.kubesphere.io/docs/"
+    weight = 6
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v1.0"
+    URL = "https://v1-0.docs.kubesphere.io/docs/"
+    weight = 7
 
 [[languages.en.menu.main]]
 weight = 5
@@ -157,6 +190,13 @@ name = "Community"
     URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
     weight = 5
 
+    [[languages.en.menu.main]]
+    parent = "Community"
+    name = "OSPP 2023"
+    URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/README.md"
+    weight = 6
+
+
 [languages.zh]
 weight = 2
 contentDir = "content/zh"
@@ -168,6 +208,10 @@ title = "KubeSphere | 面向云原生应用的容器混合云"
 description = "KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"
 keywords = "KubeSphere, Kubernetes, 容器平台, DevOps, 混合云"
 snapshot = "/images/common/snapshot-zh.png"
+useSendcloud = true
+mailchimpSubscribeUrl = "https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46"
+showCaseNumber = true
+bilibiliLink = "https://space.bilibili.com/438908638"
 
 [[languages.zh.menu.main]]
 weight = 2
@@ -188,7 +232,7 @@ hasChildren = true
 
   [[languages.zh.menu.main]]
   parent = "应用场景"
-  name = "构建丰富的云原生可观察性"
+  name = "构建丰富的云原生可观测性"
   URL = "observability/"
   weight = 8
 
@@ -221,33 +265,57 @@ hasChildren = true
   URL = "videos/"
   weight = 4
 
+  [[languages.zh.menu.main]]
+  parent = "资源"
+  name = "云原生实战"
+  URL = "learn/"
+  weight = 5
+
 [[languages.zh.menu.main]]
 weight = 4
 hasChildren = true
 name = "文档中心"
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v3.0.0 <img src='/images/header/star.svg' alt='star'>"
-    URL = "docs/"
+    name = "v3.3 <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs/v3.3"
     weight = 1
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v2.1.x"
-    URL = "https://v2-1.docs.kubesphere.io/docs/zh-CN/"
+    name = "v3.2"
+    URL = "https://v3-2.docs.kubesphere.io/zh/docs/"
     weight = 2
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v2.0.x"
-    URL = "https://v2-0.docs.kubesphere.io/docs/zh-CN/"
+    name = "v3.1"
+    URL = "https://v3-1.docs.kubesphere.io/zh/docs/"
     weight = 3
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v1.0.0"
-    URL = "https://v1-0.docs.kubesphere.io/docs/zh-CN/"
+    name = "v3.0"
+    URL = "https://v3-0.docs.kubesphere.io/zh/docs/"
     weight = 4
+
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "v2.1"
+    URL = "https://v2-1.docs.kubesphere.io/docs/zh-CN/"
+    weight = 5
+
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "v2.0"
+    URL = "https://v2-0.docs.kubesphere.io/docs/zh-CN/"
+    weight = 6
+
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "v1.0"
+    URL = "https://v1-0.docs.kubesphere.io/docs/zh-CN/"
+    weight = 7
 
 [[languages.zh.menu.main]]
 weight = 5
@@ -261,151 +329,169 @@ name = "开源社区"
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
+    name = "社区活动"
+    URL = "live/"
+    weight = 2
+
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
     name = "案例学习"
     URL = "case/"
-    weight = 2
+    weight = 3
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "合作伙伴"
     URL = "partner/"
-    weight = 3
+    weight = 4
+
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
+    name = "用户委员会"
+    URL = "user-group/"
+    weight = 5
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "动态"
     URL = "news/"
-    weight = 4
+    weight = 6
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "版本计划"
     URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
-    weight = 5
+    weight = 7
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "中国站"
     URL = "https://kubesphere.com.cn/"
-    weight = 6
+    weight = 8
+
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
+    name = "开源之夏 2023"
+    URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2023"
+    weight = 9
 
 [[languages.zh.menu.main]]
 weight = 6
 name = "用户论坛"
-URL = "https://kubesphere.com.cn/forum"
+URL = "https://ask.kubesphere.io/forum"
 
 
-[languages.tr]
-weight = 3
-contentDir = "content/tr"
-languageCode = "tr-TR"
-languageName = "Türkçe"
+# [languages.tr]
+# weight = 3
+# contentDir = "content/tr"
+# languageCode = "tr-TR"
+# languageName = "Türkçe"
 
-[[languages.tr.menu.main]]
-weight = 2
-name = "Senaryolar"
-hasChildren = true
+# [[languages.tr.menu.main]]
+# weight = 2
+# name = "Senaryolar"
+# hasChildren = true
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "Multi-cluster"
-  URL = "multi-cluster"
-  weight = 1
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "Multi-cluster"
+#   URL = "multi-cluster"
+#   weight = 1
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "DevOps"
-  URL = "devOps"
-  weight = 2
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "DevOps"
+#   URL = "devOps"
+#   weight = 2
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "Network"
-  URL = "network"
-  weight = 3
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "Network"
+#   URL = "network"
+#   weight = 3
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "Service Mesh"
-  URL = "service-mesh"
-  weight = 4
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "Service Mesh"
+#   URL = "service-mesh"
+#   weight = 4
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "Storage"
-  URL = "storage"
-  weight = 5
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "Storage"
+#   URL = "storage"
+#   weight = 5
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "AppStore"
-  URL = "app-store"
-  weight = 6
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "AppStore"
+#   URL = "app-store"
+#   weight = 6
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "Multi-tenancy"
-  URL = "multi-tenancy"
-  weight = 7
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "Multi-tenancy"
+#   URL = "multi-tenancy"
+#   weight = 7
 
-  [[languages.tr.menu.main]]
-  parent = "Senaryolar"
-  name = "Observability"
-  URL = "observability"
-  weight = 8
+#   [[languages.tr.menu.main]]
+#   parent = "Senaryolar"
+#   name = "Observability"
+#   URL = "observability"
+#   weight = 8
 
-[[languages.tr.menu.main]]
-weight = 3
-name = "Kaynaklar"
-hasChildren = true
+# [[languages.tr.menu.main]]
+# weight = 3
+# name = "Kaynaklar"
+# hasChildren = true
 
-  [[languages.tr.menu.main]]
-  parent = "Kaynaklar"
-  name = "Open Source Projeler"
-  URL = "projects/"
-  weight = 1
+#   [[languages.tr.menu.main]]
+#   parent = "Kaynaklar"
+#   name = "Open Source Projeler"
+#   URL = "projects/"
+#   weight = 1
 
-  [[languages.tr.menu.main]]
-  parent = "Kaynaklar"
-  name = "KubeCon & QCon"
-  URL = "conferences/"
-  weight = 2
+#   [[languages.tr.menu.main]]
+#   parent = "Kaynaklar"
+#   name = "KubeCon & QCon"
+#   URL = "conferences/"
+#   weight = 2
 
-  [[languages.tr.menu.main]]
-  parent = "Kaynaklar"
-  name = "Blog Yazıları"
-  URL = "blogs/"
-  weight = 3
+#   [[languages.tr.menu.main]]
+#   parent = "Kaynaklar"
+#   name = "Blog Yazıları"
+#   URL = "blogs/"
+#   weight = 3
 
-  [[languages.tr.menu.main]]
-  parent = "Kaynaklar"
-  name = "Videolar"
-  URL = "videos/"
-  weight = 4
+#   [[languages.tr.menu.main]]
+#   parent = "Kaynaklar"
+#   name = "Videolar"
+#   URL = "videos/"
+#   weight = 4
 
-[[languages.tr.menu.main]]
-weight = 4
-name = "Dokümantasyon"
-URL = "docs/"
+# [[languages.tr.menu.main]]
+# weight = 4
+# name = "Dokümantasyon"
+# URL = "docs/"
 
-[[languages.tr.menu.main]]
-weight = 5
-hasChildren = true
-name = "Topluluk"
-    [[languages.tr.menu.main]]
-    parent = "Topluluk"
-    name = "Contribution"
-    URL = "contribution/"
-    weight = 1
+# [[languages.tr.menu.main]]
+# weight = 5
+# hasChildren = true
+# name = "Topluluk"
+#     [[languages.tr.menu.main]]
+#     parent = "Topluluk"
+#     name = "Contribution"
+#     URL = "contribution/"
+#     weight = 1
 
-    [[languages.tr.menu.main]]
-    parent = "Topluluk"
-    name = "Case Studies"
-    URL = "case/"
-    weight = 2
+#     [[languages.tr.menu.main]]
+#     parent = "Topluluk"
+#     name = "Case Studies"
+#     URL = "case/"
+#     weight = 2
 
-    [[languages.tr.menu.main]]
-    parent = "Topluluk"
-    name = "Partnerler"
-    URL = "partner/"
-    weight = 3
+#     [[languages.tr.menu.main]]
+#     parent = "Topluluk"
+#     name = "Partnerler"
+#     URL = "partner/"
+#     weight = 3

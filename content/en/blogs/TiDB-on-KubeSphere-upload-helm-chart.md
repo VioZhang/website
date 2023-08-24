@@ -8,7 +8,7 @@ author: 'Will, Feynman, Sherlock'
 snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/tidb-architecture.png'
 ---
 
-[My last blog](https://kubesphere.io/blogs/tidb-on-kubesphere-using-qke/) talked about how to deploy TiDB Operator and a TiDB cluster on KubeSphere. After you add an app repository to KubeSphere, apps within the repository are provided as app templates on the container platform. Tenants in the same workspace can deploy these app templates if they have necessary permissions. However, if you want these apps to be available to all workspace tenants, I recommend you release apps to the public repository of KubeSphere, also known as the KubeSphere App Store.
+[My last blog](https://kubesphere.io/blogs/tidb-on-kubesphere-using-qke/) talked about how to deploy TiDB Operator and a TiDB cluster on KubeSphere. After you add an app repository to KubeSphere, apps within the repository are provided as app templates on the [container platform](https://kubesphere.io/). Tenants in the same workspace can deploy these app templates if they have necessary permissions. However, if you want these apps to be available to all workspace tenants, I recommend you release apps to the public repository of KubeSphere, also known as the KubeSphere App Store.
 
 In this article, I will demonstrate another way to upload an app to KubeSphere and release it to the App Store.
 
@@ -105,7 +105,7 @@ Now that you have Helm charts ready, you can upload them to KubeSphere as app te
 
 You can release apps you have uploaded to KubeSphere to the public repository, also known as the App Store. In this way, all tenants on the platform can see these apps and deploy them if they have necessary permissions regardless of the workspace they belong to.
 
-1. Click **Platform** in the top left corner and select **Access Control**.
+1. Click **Platform** in the top-left corner and select **Access Control**.
 
 2. On the **Workspaces** page, click the workspace where you have uploaded the Helm charts above.
 
@@ -115,11 +115,11 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
    ![app-template-list](https://ap3.qingstor.com/kubesphere-website/docs/20201201150748.png)
 
-4. On the detail page, click the version number to expand the menu where you can delete the version, deploy the app to test it, or submit it for review. KubeSphere allows you to manage an app across its entire lifecycle. For an enterprise, this is very useful when different tenants need to be isolated from each other and are only responsible for their own part as they manage an app version. For demonstration purposes, I will use the account `admin` to perform all the operations. As we do not need to test the app, click **Submit Review** directly.
+4. On the detail page, click the version number to expand the menu where you can delete the version, deploy the app to test it, or submit it for review. KubeSphere allows you to manage an app across its entire lifecycle. For an enterprise, this is very useful when different tenants need to be isolated from each other and are only responsible for their own part as they manage an app version. For demonstration purposes, I will use the user `admin` to perform all the operations. As we do not need to test the app, click **Submit Review** directly.
 
    ![detail-page](https://ap3.qingstor.com/kubesphere-website/docs/20201201150948.png)
 
-5. After the app is submitted for review, I need to approve it before it can be released to the App Store. Click **Platform** in the top left corner and select **App Store Management**.
+5. After the app is submitted for review, I need to approve it before it can be released to the App Store. Click **Platform** in the top-left corner and select **App Store Management**.
 
    ![app-store-management](https://ap3.qingstor.com/kubesphere-website/docs/20201201152220.png)
 
@@ -131,7 +131,7 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
    ![approve-app](https://ap3.qingstor.com/kubesphere-website/docs/20201201152734.png)
 
-8. After the app is approved, you can release it to the App Store. Click **Platform** in the top left corner,  select **Access Control**, and go back to your workspace. Select **App Templates** from the navigation bar and click **tidb-operator**.
+8. After the app is approved, you can release it to the App Store. Click **Platform** in the top-left corner,  select **Access Control**, and go back to your workspace. Select **App Templates** from the navigation bar and click **tidb-operator**.
 
    ![tidb-operator-app-template](https://ap3.qingstor.com/kubesphere-website/docs/20201201153102.png)
 
@@ -141,7 +141,7 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
     ![release-prompt](https://ap3.qingstor.com/kubesphere-website/docs/20201201153423.png)
 
-11. To view the app released, click **App Store** in the top left corner and you can see it in the App Store. Likewise, you can deploy **tidb-cluster** to the App Store by following the same step.
+11. To view the app released, click **App Store** in the top-left corner and you can see it in the App Store. Likewise, you can deploy **tidb-cluster** to the App Store by following the same step.
 
     ![tidb-operator](https://ap3.qingstor.com/kubesphere-website/docs/20201201154211.png)
 
@@ -151,7 +151,7 @@ You can release apps you have uploaded to KubeSphere to the public repository, a
 
 Both TiDB and KubeSphere are powerful tools for us as we deploy containerized applications and use the distributed database on the cloud. As a big fan of open source, I hope both sides can continue to deliver efficient and effective cloud-native tools for us in production.
 
-If you have any questions, don’t hesitate to contact us in [Slack](https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE) or [GitHub](https://github.com/kubesphere).
+If you have any questions, don’t hesitate to contact us in [Slack](https://join.slack.com/t/kubesphere/shared_invite/zt-1ilxbsp39-t4ES4xn5OI0eF5hvOoAhEw) or [GitHub](https://github.com/kubesphere).
 
 ## References
 

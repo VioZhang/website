@@ -24,6 +24,8 @@ section2:
 section3:
   title: 'Partner Types'
   tip: Apply now →
+  link: "https://jinshuju.net/f/QZ52Gm"
+  linkText: 'Apply now'
   partnerType:
     - title: "App Providers"
       content: "KubeSphere App Store is a great place to showcase your applications. KubeSphere brings your applications to tens of thousands of users, allowing them to deploy your App to Kubernetes with one click."
@@ -76,7 +78,7 @@ section4:
       partnerType: "Technology"
       content: 'OrionX software provides a fine-grained, remote, and dynamically configurable virtualization solution for physical GPUs with almost no performance loss.'
 
-    - icon: "images/partner/qingcloud.svg"
+    - icon: "images/partner/QingCloud-Logo-Color.png"
       partnerType: "Cloud Provider"
       content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services. QKE is a cloud-hosted Kubernetes service with KubeSphere and powered by QingCloud'
 
@@ -85,6 +87,54 @@ section4:
       content: 'With the technical infrastructure it holds, Radore provides private and corporate data center services (Colocation, Dedicated Servers, Cloud Services, Web Hosting, CDN).'
 
     - icon: "images/partner/webank.jpg"
-      partnerType: "App provider"
+      partnerType: "App Provider"
       content: 'WeBank, The 1st digital bank in China and initiated by Tencent, offers wealth management and financing services through different online platforms.'
+   
+    - icon: "images/partner/cloudnative-community.jpg"
+      partnerType: "Go-to-market"
+      content: 'Cloud Native Community is an neutral, cloud native end user community founded on May 12, 2020 by CNCF ambassadors and open source opinion leaders to promote cloud native technologies and build a developer ecosystem.'
+
+    - icon: "images/partner/jihu.svg"
+      partnerType: "App Provider"
+      content: 'JiHu GitLab is an out-of-the-box, open DevOps platform built from the ground up as a single application for all stages of the DevOps lifecycle. This enables Product, Development, QA, Security, and Operations teams to work concurrently on the same project.'
+
+    - icon: "images/partner/Cloudview-logo.png"
+      partnerType: "Technology"
+      content: 'Cloudview is a cloud computing platform that provides IaaS-PaaS-based flexible cloud services.'  
+      
+    - icon: "images/partner/logo-deepflow.png"
+      partnerType: "App Provider"
+      content: 'DeepFlow is a highly automated observability platform open sourced by YUNSHAN Network Inc. (opens new window). It is a full stack, full span and high-performance data engine built for cloud-native observability application developers. With new technologies such as eBPF, WASM and OpenTelemetry, DeepFlow innovatively implements core mechanisms such as AutoTracing, AutoMetrics, AutoTagging and SmartEncoding, helping developers to improve the automation level of code injection, reducing the maintanence complexity of the observability platform. With the programmability and open API of DeepFlow, developers can quickly integrate it into their observability stack.' 
+
+    - icon: "images/partner/JuiceFS_logo.png"
+      partnerType: "App Provider"
+      content: 'JuiceFS is an open source, high-performance distributed file system designed for the cloud. It provides full POSIX compatibility, allowing almost all kinds of object storage to be used locally as massive local disks and to be mounted and read on different cross-platform and cross-region hosts at the same time.' 
+
+    - icon: "images/partner/sofastack-logo.png"
+      partnerType: "Go-to-market"
+      content: 'SOFAStack open source community is able to quickly build financial grade cloud native architecture, while refining best practices in multiple financial scenarios, with the following characteristics.First, the community profile is open, with a comprehensive open source community, neutral, compatible with the community and open source ecosystem, and SOFAStack actively working with other communities to build the ecosystem;Second, financial grade, including the components required to build financial grade cloud-native architecture, allowing users to focus more on business development, to meet the current and future needs of the user scenario, experienced the refinement of large-scale scenarios, especially the demanding financial scenarios;Third, cloud-native, based on SOFAStack can quickly build cloud-native microservices system, rapid development of more reliable, scalable, more easily maintained cloud-native applications.'
+
+    - icon: "images/partner/crane.svg"
+      partnerType: "App Provider"
+      content: 'Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters. The goal is not only help user to manage cloud cost easier but also ensure the quality of applications.' 
+
+    - icon: "images/partner/logo-chaosmesh.svg"
+      partnerType: "App Provider"
+      content: 'Chaos Mesh is an open source cloud-native Chaos Engineering platform. It offers various types of fault simulation and has an enormous capability to orchestrate fault scenarios. Using Chaos Mesh, you can conveniently simulate various abnormalities that might occur in reality during the development, testing, and production environments and find potential problems in the system. To lower the threshold for a Chaos Engineering project, Chaos Mesh provides you with a visualization operation. You can easily design your Chaos scenarios on the Web UI and monitor the status of Chaos experiments.' 
+
+    - icon: "images/partner/nocalhost-horizontal-color.svg"
+      partnerType: "App Provider"
+      content: 'The term Nocalhost originates from No Local, which is a cloud-native development tool based on IDE, provides realtime cloud native application developing experience. When developing cloud-based application in Nocalhost, any code changes can immediately take effects in remote side, and there is no need to rebuild a new image. This can shorten the entire development feedback loops and massively improve R&D efficiency.' 
+
+    - icon: "images/partner/Curve-logo.svg"
+      partnerType: "App Provider"
+      content: 'Curve is a high-performance, lightweight-operation, cloud-native open source distributed storage system. Curve can be applied to: 1) mainstream cloud-native infrastructure platforms OpenStack and Kubernetes; 2) high-performance storage for cloud-native databases; 3) cloud storage middleware using S3-compatible object storage as a data storage.' 
+
+    - icon: "images/partner/databend-logo.svg"
+      partnerType: "App Provider"
+      content: 'Databend is a modern cloud data warehouse focusing on reducing cost and complexity for your massive-scale analytics needs. It is an open-source alternative to Snowflake.'  
+
+    - icon: "images/partner/logo-flomesh.png"
+      partnerType: "Go-to-market"
+      content: 'Flomesh is a leading provider of cloud-native application traffic management solutions centered around the open-source software, Pipy. With an extensive range of products and solutions, Flomesh excels in delivering unified and consistent load balancing capabilities, out-of-the-box service mesh functionality, and globally integrated management features, specifically designed for hybrid cloud and multi-cloud environments.'
 ---

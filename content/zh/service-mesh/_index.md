@@ -26,7 +26,7 @@ section2:
 
     - title: 虚拟化
       image: /images/service-mesh/visualization.png
-      summary: 可观察性有助于了解云原生微服务之间的关系。KubeSphere 支持可视化界面，直接地呈现微服务之间的拓扑关系，并提供细粒度的监控数据。
+      summary: 可观测性有助于了解云原生微服务之间的关系。KubeSphere 支持可视化界面，直接地呈现微服务之间的拓扑关系，并提供细粒度的监控数据。
       contentList:
 
     - title: 分布式链路追踪
@@ -39,7 +39,7 @@ section3:
   videoLink: https://www.youtube.com/embed/EkGWtwcsdE4
   content: 想自己动手体验实际操作？
   btnContent: 开始动手实验
-  link: https://kubesphere.com.cn/docs/pluggable-components/service-mesh/
+  link: docs/pluggable-components/service-mesh/
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

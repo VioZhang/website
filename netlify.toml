@@ -1,8 +1,53 @@
 [context.production.environment]
-  HUGO_VERSION = "0.70.0"
+  HUGO_VERSION = "0.117.0"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.70.0"
+  HUGO_VERSION = "0.117.0"
 
-[context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+[[redirects]]
+  from = "/docs"
+  to = "/docs/v3.3"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/zh/docs"
+  to = "/zh/docs/v3.3"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/docs/v3.3/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh/docs/*"
+  to = "/zh/docs/v3.3/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/log/*"
+  to = "https://log.kubesphere.io/:splat"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/tr/forum/*"
+  to = "http://139.198.113.75:9900/tr/forum/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/forum/*"
+  to = "https://ask.kubesphere.io/forum/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/forum/"
+  to = "https://ask.kubesphere.io/forum/"
+  status = 301
+  force = true

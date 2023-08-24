@@ -8,7 +8,7 @@ author: 'Sherlock'
 snapshot: 'https://ap3.qingstor.com/kubesphere-website/docs/KubeKey-lightweight-installer.png'
 ---
 
-In my previous articles, I talked about how to use [KubeKey](https://github.com/kubesphere/kubekey) to set up and scale a Kubernetes cluster. As you may already know, KubeKey can do way more than that. You can also use KubeKey to install [KubeSphere](https://kubesphere.io/), a container platform running on top of Kubernetes with streamlined DevOps workflows, unified multi-cluster management and more. Besides, KubeKey is able to install cloud-native add-ons by Chart or YAML files.
+In my previous articles, I talked about how to use [KubeKey](https://github.com/kubesphere/kubekey) to set up and scale a Kubernetes cluster. As you may already know, KubeKey can do way more than that. You can also use KubeKey to install KubeSphere, a [container platform](https://kubesphere.io/) running on top of Kubernetes with streamlined DevOps workflows, unified multi-cluster management and more. Besides, KubeKey is able to install cloud-native add-ons by Chart or YAML files.
 
 Among other things, storage represents one of, if not the most important element as you set up a Kubernetes cluster. Kubernetes itself supports multiple storage solutions, such as NFS-client, Ceph CSI and GlusterFS (in-tree). In this article, I am going to show you how to use KubeKey to create a Kubernetes and KubeSphere cluster with [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) providing external storage.
 
@@ -178,7 +178,7 @@ Now that we have our server machine ready, we need to install `nfs-common` on al
 1. Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command to download KubeKey version 1.0.1. You only need to download KubeKey to one of your machines that serves as the **taskbox** for installation.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v1.0.1 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v2.0.0 sh -
    ```
 
 2. The above command downloads KubeKey and unzips the file. Your folder now contains a file called `kk`. Make it executable.
@@ -190,7 +190,7 @@ Now that we have our server machine ready, we need to install `nfs-common` on al
 3. Specify a Kubernetes version and a KubeSphere version that you want to install. For more information about supported Kubernetes versions, see [this list](https://github.com/kubesphere/kubekey/blob/master/docs/kubernetes-versions.md).
 
    ```bash
-   ./kk create config --with-kubernetes v1.17.9 --with-kubesphere v3.0.0
+   ./kk create config --with-kubernetes v1.20.4 --with-kubesphere v3.2.1
    ```
 
 4. A default file `config-sample.yaml` will be created if you do not customize the name. Edit the file.
@@ -317,7 +317,7 @@ You can verify that NFS-client has been successfully installed either from the c
 
 1. The `ks-console` Service is being exposed through a NodePort. Log in to the console at `<node IP>:30880` with the default account and password (`admin/P@88w0rd`). You may need to open the port in your security groups and configure relevant port forwarding rules depending on your environment.
 
-2. Click **Platform** in the top left corner and go to **Cluster Management**. In **Storage Classes** under **Storage**, you can see two storage classes:
+2. Click **Platform** in the top-left corner and go to **Cluster Management**. In **Storage Classes** under **Storage**, you can see two storage classes:
 
    ![nfs-storage-class](/images/blogs/en/install-nfs-server-client-for-kubesphere-cluster/nfs-storage-class.png)
 

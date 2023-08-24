@@ -3,6 +3,41 @@
 <head>
     {{- partial "head.html" . -}}
 </head>
+<script>
+    const LANGUAGE_REG = [/en/g, /zh/g]
+    const LANGUAGE_HREF = ['/', '/zh']
+
+    const userLang = navigator.language;
+    const nowPathName = window.location.pathname
+    let cookieBanned = false
+    let pageLang
+
+    try{
+        pageLang = localStorage.getItem('lang')
+    } catch (err){
+        cookieBanned = true
+    }
+
+    if(!pageLang){
+        if(userLang.indexOf('zh') !== -1){
+            pageLang = 'zh'
+        } else {
+            pageLang = 'en'
+        }
+    }
+
+    if(!cookieBanned){
+        if (pageLang === 'en') {
+            if (nowPathName.startsWith('/zh')) {
+                window.location.href =  nowPathName.slice(3,)
+            }
+        } else {
+            if (!nowPathName.startsWith('/zh')) {
+                window.location.href = '/zh' + nowPathName
+            }
+        }  
+    }
+</script>
 
 <body>
 {{ if .Site.Params.addGoogleTag }}

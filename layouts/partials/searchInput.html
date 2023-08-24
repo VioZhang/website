@@ -9,31 +9,32 @@
 </div>
 <script>
 docsearch({
-  apiKey: '221332a85783d16a5b930969fe4a934a',
+  appId:'P64S7K7Q7W',
+  apiKey: '1cf6480742e28cdc08c95710326ede25',
   indexName: 'kubesphere',
   inputSelector: '#search',
   algoliaOptions: {
       facetFilters: [`lang:${language}`],
       hitsPerPage: 10,
   },
-  transformData: function(hits) {
-    hits.forEach(hit => {
-      if (typeof window !== undefined) {
-        var host = window.location.host
-        if (host == 'kubesphere.com.cn') {
-          if (language == 'en') {
-            host = host + '/en'
-            hit.url = hit.url.replace('kubesphere.io', host)
-          } else if (language == 'zh') {
-            hit.url = hit.url.replace('kubesphere.io/zh', host)
-          }
-        } else {
-          hit.url = hit.url.replace('kubesphere.io', host)
-        }
-      }
-    })
-    return hits
-  },
+  // transformData: function(hits) {
+  //   hits.forEach(hit => {
+  //     if (typeof window !== undefined) {
+  //       var host = window.location.host
+  //       if (host == 'kubesphere.com.cn') {
+  //         if (language == 'en') {
+  //           host = host + '/en'
+  //           hit.url = hit.url.replace('kubesphere.io', host)
+  //         } else if (language == 'zh') {
+  //           hit.url = hit.url.replace('kubesphere.io/zh', host)
+  //         }
+  //       } else {
+  //         hit.url = hit.url.replace('kubesphere.io', host)
+  //       }
+  //     }
+  //   })
+  //   return hits
+  // },
   debug: false,
 })
 </script>
